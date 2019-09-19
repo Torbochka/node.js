@@ -1,0 +1,19 @@
+{
+  "name": "node.js",
+  "version": "1.0.0",
+  "description": "homeworks",
+  "main": "index.js",
+  "repository": "git@github.com:Torbochka/node.js.git",
+  "scripts": {
+    "codestyle": "eslint",
+    "start": "node index.js"
+  },
+  "author": "Alexander Tobek <sasha.torbek@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "1.18.2"
+  }
+}
