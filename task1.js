@@ -10,32 +10,20 @@ const argv = require("yargs")
   .help("h")
   .alias("h", "help").argv;
 
-let interval;
-let timeout;
-
 http
   .createServer((req, res) => {
     const d = new Date();
 
     if (req.url === "/") {
       console.log("HTTP server running..");
-      interval = setInterval(() => console.log(d.toUTCString()), argv.i);
-      timeout = setTimeout(() => {
+      const interval = setInterval(() => console.log(d.toUTCString()), argv.i);
+
+      setTimeout(() => {
         clearInterval(interval);
         console.log("Date output stopped");
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(d.toUTCString());
       }, argv.p);
-
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end("<h1>Start date output to console..</h1>");
-    } else if (req.url === "/stop") {
-      if (interval !== undefined && timeout !== undefined) {
-        clearTimeout(timeout);
-        clearInterval(interval);
-        console.log("Date output stopped by get request");
-      }
-
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(d.toUTCString());
     }
   })
   .listen(3000);
