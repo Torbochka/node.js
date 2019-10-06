@@ -1,0 +1,12 @@
+{
+  "session": {
+    "key": "auth",
+    "maxAge": 600000,
+    "overwrite": true,
+    "httpOnly": true,
+    "signed": false,
+    "rolling": false,
+    "renew": false
+  },
+  "upload": "./public/upload"
+}

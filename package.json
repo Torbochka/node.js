@@ -1,19 +1,45 @@
 {
-  "name": "node.js",
-  "version": "1.0.0",
-  "description": "homeworks",
-  "main": "index.js",
-  "repository": "git@github.com:Torbochka/node.js.git",
+  "name": "builder",
+  "version": "0.0.1",
+  "author": "krabaton",
+  "license": "ISC",
   "scripts": {
-    "codestyle": "eslint",
-    "start": "node index.js"
+    "server": "PORT=4000 nodemon  $NODE_DEBUG_OPTION --ignore database/db.json ./app.js"
   },
-  "author": "Alexander Tobek <sasha.torbek@yandex.ru>",
-  "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.4.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^15.2.0",
+    "del": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "debug": "~2.6.9",
+    "jade": "~1.11.0"
+  },
+  "dependencies": {
+    "@nauma/eventemitter": "^1.0.7",
+    "connect-flash": "^0.1.1",
+    "formidable": "^1.2.1",
+    "http-errors": "~1.6.2",
+    "joi": "^14.3.1",
+    "jquery": "^3.3.1",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-connect-flash": "^0.1.2",
+    "koa-pug": "^3.0.0-2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.2",
+    "koa-static": "^5.0.0",
+    "lowdb": "^1.0.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^1.19.3",
+    "normalize.css": "^7.0.0",
+    "pug": "^2.0.0-rc.4"
   }
 }
